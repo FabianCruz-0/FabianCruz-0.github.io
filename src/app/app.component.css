@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name{
+    color: black;
+    font-size: 3vw;
+    text-decoration: none;
+}
