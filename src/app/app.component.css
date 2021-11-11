@@ -5,7 +5,12 @@
 }
 
 .name{
-    color: black;
+    color: white;
     font-size: 3vw;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.link{
+    color: white;
     text-decoration: none;
 }

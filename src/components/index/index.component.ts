@@ -10,7 +10,7 @@ export class IndexComponent implements OnInit {
   
   public constructor(private titleService: Title)
   {
-     this.setTitle('bye')
+     this.setTitle('Fabián Cruz')
    }
 
   public setTitle(newTitle: string) {
