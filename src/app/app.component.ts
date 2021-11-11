@@ -10,7 +10,7 @@ export class AppComponent {
 
   public constructor(private titleService: Title)
   {
-     this.setTitle('hi')
+     this.setTitle('Fabián Cruz')
    }
 
   public setTitle(newTitle: string) {
