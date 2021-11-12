@@ -1,1 +1,0 @@
-body,html{scroll-behavior:smooth;font-family:Helvetica,Arial;font-size:1.2vw}body{height:130vh}*{padding:0;margin:0;box-sizing:border-box;color:#fff}a{transition:transform 1s}a:hover{transform:scale(1.2)}.cont{background:radial-gradient(circle,#fff0 0,rgba(0,0,0,.905) 100%);width:100%;height:100%;z-index:300}canvas{z-index:-10;position:absolute;top:0;left:0}
