@@ -4,9 +4,6 @@ html,body{
     font-family: Helvetica,Arial;
     font-size: 1.2vw;
 }
-body{
-    height: 130vh;
-}
 *{
     padding: 0;
     margin: 0;
@@ -22,14 +19,14 @@ a:hover{
     transform: scale(1.2);
 }
 .cont{
-    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.9051995798319328) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,0) 40%, rgba(0,0,0,0.9051995798319328) 100%);
     width: 100%;
     height: 100%;
     z-index: 300;
 }
-canvas{
-    z-index: -10;
+canvas {
     position: absolute;
-    top: 0;
-    left: 0;
-}
+    top:0;
+    left:0;
+    z-index: -1;
+  }
