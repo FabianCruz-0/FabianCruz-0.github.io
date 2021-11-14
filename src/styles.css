@@ -1,32 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
-html,body{
-    scroll-behavior: smooth;
-    font-family: Helvetica,Arial;
-    font-size: 1.2vw;
-}
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: Helvetica, Arial;
+  font-size: 1.2vw;
+  width: 100vw;
+  height: 100vh;
+  animation: 7s fade-in-body;
 }
 
-a{
-    transition: transform 1s;
-}
-
-a:hover{
-    transform: scale(1.2);
-}
-.cont{
-    background: radial-gradient(circle, rgba(255,255,255,0) 40%, rgba(0,0,0,0.9051995798319328) 100%);
-    width: 100%;
-    height: 100%;
-    z-index: 300;
-}
-canvas {
+.cont {
     position: absolute;
-    top:0;
-    left:0;
-    z-index: -1;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+canvas {
+    margin: 0;
+    padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.header {
+    width: 100vw;
+    margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: center-header 6s;
+}
+
+.name {
+  color: white;
+  font-size: 3vw;
+  text-decoration: none;
+  font-weight: bolder;
+  animation: fade-in 2.1s ease-in forwards;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 1s;
   }
+  
+  .link:hover{
+      color: white;
+      transform: scale(1.2)
+  }
+
+.header-text{
+    animation: fade-in 3.4s ease-in forwards; 
+    margin: 0;
+}
+
+.header-link{
+    animation: fade-in 3.7s ease-in forwards; 
+    text-decoration: underline;
+}
+
+/* animaciones */
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-body {
+  0% {
+    background-color: black;
+  }
+  45%{
+    background-color: black;  
+  }
+  80% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  100% {
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+}
+
+@keyframes center-header {
+  0% {
+      margin-top: 45vh;
+  }
+  40% {
+    margin-top: 45vh;
+}
+  100% {
+      margin-top: 1vh;
+  }
+}
