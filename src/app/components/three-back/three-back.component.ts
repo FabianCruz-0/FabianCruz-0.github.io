@@ -29,7 +29,7 @@ export class ThreeBackComponent implements OnInit {
 
       camera = new THREE.PerspectiveCamera(
         60,
-        (window.innerWidth+30) / (window.innerHeight+30),
+        window.innerWidth / window.innerHeight,
         1,
         1000
       );
@@ -37,7 +37,7 @@ export class ThreeBackComponent implements OnInit {
       camera.rotation.x = Math.PI / 2;
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setSize((window.innerWidth+30), (window.innerHeight+30));
+      renderer.setSize((window.innerWidth+50), (window.innerHeight+50));
       document.body.appendChild(renderer.domElement);
 
       starGeo = new THREE.Geometry();
@@ -65,9 +65,9 @@ export class ThreeBackComponent implements OnInit {
       animate();
     }
     function onWindowResize() {
-      camera.aspect = (window.innerWidth+30) / (window.innerHeight+30);
+      camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize((window.innerWidth+30), (window.innerHeight+30));
+      renderer.setSize((window.innerWidth+50), (window.innerHeight+50));
     }
 
     function animate() {
