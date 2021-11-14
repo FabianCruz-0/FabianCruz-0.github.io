@@ -24,6 +24,8 @@ export class ThreeBackComponent implements OnInit {
       star,
       stars: { rotation: { y: number } };
 
+      let canvas: HTMLElement;
+
     function init() {
       scene = new THREE.Scene();
 
@@ -64,10 +66,14 @@ export class ThreeBackComponent implements OnInit {
       window.addEventListener('resize', onWindowResize, false);
       animate();
     }
+    
+
     function onWindowResize() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+      canvas.style.width = "100vw";
+      canvas.style.height = "100vh";
     }
 
     function animate() {
@@ -86,8 +92,12 @@ export class ThreeBackComponent implements OnInit {
       stars.rotation.y += 0.0002;
 
       renderer.render(scene, camera);
+      canvas = document.getElementsByTagName('canvas')[0] as HTMLElement
+    canvas.style.width = "100vw";
+    canvas.style.height = "100vh";
       requestAnimationFrame(animate);
     }
     init();
   }
+  
 }
