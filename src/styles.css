@@ -19,7 +19,7 @@ body {
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(0, 0, 0, 0.7) 100%
   );
   width: 100vw;
   height: 100vh;
@@ -48,7 +48,7 @@ canvas {
   font-size: 3vw;
   text-decoration: none;
   font-weight: bolder;
-  animation: fade-in 2.1s ease-in forwards;
+  animation: fade-in 2.1s ease-in forwards, scale-in 1.6s forwards;
 }
 
 .link {
@@ -64,12 +64,12 @@ canvas {
   }
 
 .header-text{
-    animation: fade-in 3.4s ease-in forwards; 
+    animation: fade-in 3.4s ease-in forwards,scale-in 2s forwards;; 
     margin: 0;
 }
 
 .header-link{
-    animation: fade-in 3.7s ease-in forwards; 
+    animation: fade-in 3.7s ease-in forwards, scale-in 2.5s forwards;; 
     text-decoration: underline;
 }
 
@@ -95,14 +95,14 @@ canvas {
     background: radial-gradient(
       circle,
       rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
+      rgba(0, 0, 0, 0.7) 100%
     );
   }
   100% {
     background: radial-gradient(
       circle,
       rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
+      rgba(0, 0, 0, 0.7) 100%
     );
   }
 }
@@ -116,6 +116,15 @@ canvas {
 }
   100% {
       margin-top: 1vh;
+  }
+}
+
+@keyframes scale-in {
+  from{
+    transform: scale(1.5);
+  }
+  to{
+    transform: scale(1);
   }
 }
 
