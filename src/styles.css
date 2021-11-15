@@ -48,7 +48,7 @@ canvas {
   font-size: 3vw;
   text-decoration: none;
   font-weight: bolder;
-  animation: fade-in 2.1s ease-in forwards, scale-in 1.6s forwards;
+  animation: fade-in 2.1s ease-in forwards, scale-in 1.6s;
 }
 
 .link {
@@ -64,12 +64,12 @@ canvas {
   }
 
 .header-text{
-    animation: fade-in 3.4s ease-in forwards,scale-in 2s forwards;; 
+    animation: fade-in 3.4s ease-in forwards,scale-in 2s ;
     margin: 0;
 }
 
 .header-link{
-    animation: fade-in 3.7s ease-in forwards, scale-in 2.5s forwards;; 
+    animation: fade-in 3.7s ease-in forwards, scale-in 2.5s;
     text-decoration: underline;
 }
 
