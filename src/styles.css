@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
+  cursor:none;
 }
 html,
 body {
@@ -36,7 +37,7 @@ canvas {
   z-index: -1;
 }
 .header {
-    width: 100vw;
+    width: 100%;
     margin-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -72,6 +73,19 @@ canvas {
 .header-link{
     animation: fade-in 3.7s ease-in forwards, scale-in 2.5s;
     text-decoration: underline;
+}
+
+#cursor{
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(238, 238, 238, 0.693);
+  width: 25px;
+  height: 25px;
+  z-index: 20;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
 }
 
 /* animaciones */
