@@ -12,6 +12,8 @@ export class ThreeBackComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    let body = document.body, html = document.documentElement;
+
     let scene: any,
       camera: { position: { z: number; }; rotation: { x: number; }; aspect: number; updateProjectionMatrix: () => void; },
       renderer: {
@@ -39,7 +41,8 @@ export class ThreeBackComponent implements OnInit {
       camera.rotation.x = Math.PI / 2;
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(window.innerWidth, Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight ));
       document.body.appendChild(renderer.domElement);
 
       starGeo = new THREE.Geometry();
@@ -71,9 +74,8 @@ export class ThreeBackComponent implements OnInit {
     function onWindowResize() {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      canvas.style.width = "100vw";
-      canvas.style.height = "100vh";
+      renderer.setSize(window.innerWidth, Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight ));
     }
 
     function animate() {
@@ -90,24 +92,22 @@ export class ThreeBackComponent implements OnInit {
       );
       starGeo.verticesNeedUpdate = true;
       stars.rotation.y += 0.0002;
+      stars.rotation.z += 0.0002;
 
       renderer.render(scene, camera);
-      canvas = document.getElementsByTagName('canvas')[0] as HTMLElement
-    canvas.style.width = "100vw";
-    canvas.style.height = "100vh";
       requestAnimationFrame(animate);
     }
     init();
     let mouseX=0
     let mouseY=0
-    const rotationSpeed=0.00025
+    const rotationSpeed=0.0002
     addEventListener('mousemove', (e) => 
     {
       mouseX=e.clientX;
       mouseY=e.clientY;
       stars.rotation.x=-mouseY*rotationSpeed;
       stars.rotation.y=-mouseX*rotationSpeed;
-      stars.rotation.z=mouseX*rotationSpeed;
+      // stars.rotation.z=mouseX*rotationSpeed;
     })
 
   }
