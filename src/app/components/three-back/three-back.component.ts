@@ -104,8 +104,7 @@ export class ThreeBackComponent implements OnInit {
       mouseX=e.clientX;
       mouseY=e.clientY;
       stars.rotation.x=-mouseY*rotationSpeed;
-      stars.rotation.y=-mouseX*rotationSpeed;
-      // stars.rotation.z=mouseX*rotationSpeed;
+      stars.rotation.z=-mouseX*rotationSpeed;
     })
 
   }
