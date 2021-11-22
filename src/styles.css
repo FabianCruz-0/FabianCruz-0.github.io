@@ -68,7 +68,7 @@ canvas {
 
 .header-text{
     animation: fade-in 3.4s ease-in forwards,scale-in 2s ;
-    margin: 0;
+    margin: -10px 0 0 0;
 }
 
 .header-link{
@@ -78,17 +78,17 @@ canvas {
 
 .link-proj{
 position:absolute;
-top: 4vh;
+top: 4.2vh;
 left: 3vw;
-animation-delay: 2s;
+animation-delay: 2.2s;
 opacity: 0;
 }
 
 .link-cont{
   position:absolute;
-  top: 4vh;
+  top: 4.2vh;
   right: 3vw;
-  animation-delay: 2s;
+  animation-delay: 2.2s;
 opacity: 0;
 }
 
