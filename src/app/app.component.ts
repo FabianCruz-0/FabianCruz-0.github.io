@@ -11,11 +11,27 @@ export class AppComponent implements OnInit{
   
   ngOnInit(): void {
 
+    let currentX = 0
+    let currentY = 0
+    let aimX = 0
+    let aimY = 0
+    let speed = 0.1
     let cursor = document.getElementById('cursor')!;
 
+    function animate(){
+      currentX += (aimX-currentX) * speed
+      currentY += (aimY-currentY) * speed
+
+      cursor.style.top = currentX+'px'
+      cursor.style.left = currentY+'px'
+      requestAnimationFrame(animate)
+    }
+    
+    animate()
+
     document.addEventListener('mousemove', (e)=>{
-      cursor.style.left = e.pageX+"px";
-      cursor.style.top = e.pageY+"px";
+      aimX = e.pageY
+      aimY = e.pageX
     })
 
   }

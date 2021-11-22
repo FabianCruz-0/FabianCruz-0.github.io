@@ -24,7 +24,7 @@ export class ThreeBackComponent implements OnInit {
 
     let starGeo: { vertices: any[]; verticesNeedUpdate: boolean },
       star,
-      stars: { rotation: { x: number, y:number, z:number } };
+      stars: { rotation: { x: number, y:number, z:number }, position: { x: number, y:number, z:number } };
 
       let canvas: HTMLElement;
 
@@ -89,8 +89,6 @@ export class ThreeBackComponent implements OnInit {
         }
       );
       starGeo.verticesNeedUpdate = true;
-      stars.rotation.y += 0.0002;
-      stars.rotation.z += 0.0002;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
@@ -98,15 +96,18 @@ export class ThreeBackComponent implements OnInit {
     init();
     let mouseX=0
     let mouseY=0
+    let distanceX=0
+    let distanceY=0
     const rotationSpeed=0.0002
     addEventListener('mousemove', (e) => 
     {
       mouseX=e.clientX;
       mouseY=e.clientY;
-      stars.rotation.x=-mouseY*rotationSpeed;
-      stars.rotation.z=-mouseX*rotationSpeed;
+      distanceX = (window.innerWidth/2)-mouseX
+      distanceY = (window.innerHeight/2)-mouseY
+      stars.rotation.x=+(distanceY)*rotationSpeed;
+      stars.rotation.z=+(distanceX)*rotationSpeed;
     })
-
   }
   
 }

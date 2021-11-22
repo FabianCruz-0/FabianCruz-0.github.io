@@ -68,7 +68,7 @@ canvas {
 
 .header-text{
     animation: fade-in 3.4s ease-in forwards,scale-in 2s ;
-    margin: -10px 0 0 0;
+    margin: 0 0 0 0;
 }
 
 .header-link{
@@ -93,16 +93,16 @@ opacity: 0;
 }
 
 #cursor{
-  top: -1.6vw;
-  right: -1.6vw;
+  top: -1.8vw;
+  right: -1.8vw;
   position: absolute;
-  background-color: rgba(238, 238, 238, 0.693);
-  width: 1.6vw;
-  height: 1.6vw;
+  width: 1.8vw;
+  height: 1.8vw;
   z-index: 20;
   border-radius: 50%;
   transform: translate(-50%,-50%);
   pointer-events: none;
+  backdrop-filter:invert(1) blur(0.9px);
 }
 
 /* animaciones */
