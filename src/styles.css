@@ -93,11 +93,11 @@ opacity: 0;
 }
 
 #cursor{
-  top: -1.8vw;
-  right: -1.8vw;
+  top: -2vw;
+  right: -2vw;
   position: absolute;
-  width: 1.8vw;
-  height: 1.8vw;
+  width: 2vw;
+  height: 2vw;
   z-index: 20;
   border-radius: 50%;
   transform: translate(-50%,-50%);
