@@ -1,13 +1,22 @@
 <div class="header">
-  <a href="" class="name link">Fabián Cruz</a>
-  
-    <p class="header-text">Full Stack Software Engineer.</p>
-    <span>
-    <a href="" class="link header-link link-proj">Proyectos</a>
+  <a [routerLink]="['']" routerLinkActive="router-link-active" class="name link"
+    >Fabián Cruz</a
+  >
+
+  <p class="header-text">Full Stack Software Engineer.</p>
+  <span>
+    <a
+      [routerLink]="['/projects']"
+      routerLinkActive="router-link-active"
+      class="link header-link link-proj"
+      >Proyectos</a
+    >
     &nbsp;&nbsp;&nbsp;
     <a href="" class="link header-link link-cont">Contactar</a>
   </span>
 </div>
 <app-three-back></app-three-back>
 <div id="cursor"></div>
-<router-outlet></router-outlet>
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>
