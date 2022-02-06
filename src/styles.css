@@ -8,7 +8,7 @@
 html,
 body {
   scroll-behavior: smooth;
-  font-family: "serif";
+  font-family: "Arial";
   font-size: 1.2vw;
   width: 100vw;
   height: 100vh;
@@ -31,7 +31,7 @@ body {
 canvas {
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -93,8 +93,6 @@ canvas {
 }
 
 #cursor {
-  top: -2vw;
-  right: -2vw;
   position: absolute;
   width: 2vw;
   height: 2vw;
@@ -102,7 +100,7 @@ canvas {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  backdrop-filter: invert(1) blur(0.9px);
+  backdrop-filter: invert(1);
 }
 
 /* animaciones */

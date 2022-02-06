@@ -1,8 +1,6 @@
 .contenido {
-  animation: fade-in-projects 7s forwards;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  animation: fade-in-projects 7s infinite;
+  animation-delay: 5s;
   margin-top: 60px;
 }
 

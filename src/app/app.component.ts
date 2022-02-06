@@ -17,6 +17,11 @@ export class AppComponent implements OnInit{
     let aimY = 0
     let speed = 0.1
     let cursor = document.getElementById('cursor')!;
+    let contenido = document.getElementById('contenido')!;
+
+    contenido.style.display = "none";
+    setTimeout(function(){ contenido.style.display = "initial" }, 4500);
+  
 
     function animate(){
       currentX += (aimX-currentX) * speed
@@ -38,7 +43,7 @@ export class AppComponent implements OnInit{
 
   public constructor(private titleService: Title)
   {
-     this.setTitle('Fabián Cruz')
+     this.setTitle('Fabián Cruz - Software Engineer')
    }
 
    

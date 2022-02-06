@@ -8,14 +8,6 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
-  public constructor(private titleService: Title) {
-    this.setTitle('Fabián Cruz');
-  }
-
-  public setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
-  }
-
   ngOnInit(): void{
   }
 }
