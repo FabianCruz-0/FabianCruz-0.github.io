@@ -30,7 +30,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/three.min.js"
+              "src/assets/js/three.min.js",
+              "src/assets/js/pixi.min.js"
             ]
           },
           "configurations": {

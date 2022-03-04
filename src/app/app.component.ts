@@ -38,7 +38,7 @@ export class AppComponent implements OnInit{
 
   public constructor(private titleService: Title)
   {
-     this.setTitle('Fabián Cruz - Software Engineer')
+     this.setTitle('Fabián Cruz - Software Engineer.')
    }
 
    

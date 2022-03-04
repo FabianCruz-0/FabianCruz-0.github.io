@@ -1,6 +1,5 @@
 import { animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-
 declare const THREE: any;
 
 @Component({
@@ -18,6 +17,7 @@ export class ThreeBackComponent implements OnInit {
       camera: { position: { z: number; }; rotation: { x: number; }; aspect: number; updateProjectionMatrix: () => void; },
       renderer: {
         setSize: (arg0: number, arg1: number) => void;
+        setClearColor: (arg0: number, arg1: number) => void;
         domElement: any;
         render: (arg0: any, arg1: any) => void;
       };
@@ -40,7 +40,8 @@ export class ThreeBackComponent implements OnInit {
       camera.position.z = 1;
       camera.rotation.x = Math.PI / 2;
 
-      renderer = new THREE.WebGLRenderer();
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setClearColor( 0x000000, 0.5 );
       renderer.setSize(window.innerWidth, body.offsetHeight);
       document.body.appendChild(renderer.domElement);
 
@@ -58,7 +59,7 @@ export class ThreeBackComponent implements OnInit {
 
       let sprite = new THREE.TextureLoader().load('./assets/imgs/star.png');
       let starMaterial = new THREE.PointsMaterial({
-        color: 0xaaaaaa,
+        color: 0xcccccc,
         size: 0.7,
         map: sprite,
       });
@@ -98,7 +99,7 @@ export class ThreeBackComponent implements OnInit {
     let mouseY=0
     let distanceX=0
     let distanceY=0
-    const rotationSpeed=0.0002
+    const rotationSpeed=0.00008
     addEventListener('mousemove', (e) => 
     {
       mouseX=e.clientX;
