@@ -104,11 +104,11 @@ canvas {
 /* animaciones */
 
 .contenido {
-  animation: fade-in-projects 7s forwards;
+  animation: fade-in-content 7s forwards;
   margin-top: 60px;
 }
 
-@keyframes fade-in-projects {
+@keyframes fade-in-content {
   0% {
     opacity: 0;
   }

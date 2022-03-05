@@ -29,6 +29,18 @@ export class PixiBackComponent implements OnInit {
                 img.width = window.innerWidth;
                 img.height = window.innerHeight;
             }
+            if(window.innerWidth <= 429)
+            {
+              img.position.x = - img.width/2.6;
+            }
+            if(window.innerWidth >= 430 && window.innerWidth <= 789)
+            {
+              img.position.x = - img.width/3.9;
+            }
+            if(window.innerWidth >= 790 && window.innerWidth <= 992)
+            {
+              img.position.x = - 112;
+            }
         }
         window.onresize = function resi (){
             if(window.innerWidth<=992)
@@ -38,6 +50,7 @@ export class PixiBackComponent implements OnInit {
             }else{
                 img.width = window.innerWidth;
                 img.height = window.innerHeight;
+                img.position.x = 0;
             }
         }
       let depthMap = new PIXI.Sprite.from('./assets/imgs/map.png');
