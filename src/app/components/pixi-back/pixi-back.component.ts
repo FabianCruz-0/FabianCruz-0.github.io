@@ -20,11 +20,20 @@ export class PixiBackComponent implements OnInit {
       document.body.appendChild(app.view);
       let img = new PIXI.Sprite.from('./assets/imgs/background.jpg');
       app.stage.addChild(img);
+      
+/*
+TODO:
+Mantener la relación de aspecto de la imagen.
+Si la pantalla tiene un ancho más grande que el ancho de la imágen con la relación de aspecto correcta,
+hacer que el ancho de la imágen sea la de la pantalla, ampliando la anchura de la imagen solo cuando
+sea necesario.
+*/
+
         window.onload = function(){
             if(window.innerWidth<=992)
             {
-                img.width = 1080;
                 img.height =window.innerHeight;
+                img.width = img.height*1.43626570916; //relación de aspecto de la imagen
             }else{
                 img.width = window.innerWidth;
                 img.height = window.innerHeight;
@@ -37,7 +46,7 @@ export class PixiBackComponent implements OnInit {
             {
               img.position.x = - img.width/3.9;
             }
-            if(window.innerWidth >= 790 && window.innerWidth <= 992)
+            if(window.innerWidth >= 992)
             {
               img.position.x = - 112;
             }
@@ -45,12 +54,11 @@ export class PixiBackComponent implements OnInit {
         window.onresize = function resi (){
             if(window.innerWidth<=992)
             {
-                img.width = 1080;
-                img.height =window.innerHeight;
+              img.height =window.innerHeight;
+              img.width = img.height*1.43626570916;
             }else{
                 img.width = window.innerWidth;
                 img.height = window.innerHeight;
-                img.position.x = 0;
             }
         }
       let depthMap = new PIXI.Sprite.from('./assets/imgs/map.png');
