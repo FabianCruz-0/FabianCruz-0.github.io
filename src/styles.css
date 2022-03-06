@@ -11,7 +11,7 @@ body {
   font-family: "Helvetica";
   font-size: 1.2vw;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   animation: 7s fade-in-body;
   overflow-x: hidden;
 }

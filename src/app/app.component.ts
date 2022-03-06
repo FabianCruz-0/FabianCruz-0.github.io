@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
 
     document.getElementById('cont')!.style.height=document.body.offsetHeight+"px";
 
-    let currentX = 0
-    let currentY = 0
-    let aimX = 0
-    let aimY = 0
+    let currentX = -30
+    let currentY = -30
+    let aimX = -30
+    let aimY = -30
     let speed = 0.1
     let cursor = document.getElementById('cursor')!;
 
