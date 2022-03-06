@@ -12,13 +12,22 @@ export class PixiBackComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let body = document.body;
 
-    let width_var = window.innerWidth+200;
-    let height_var = window.innerHeight+200;
-
-    let app = new PIXI.Application({ width: width_var, height:height_var});
+    let app = new PIXI.Application({resizeTo: window});
       document.body.appendChild(app.view);
       let img = new PIXI.Sprite.from('./assets/imgs/background.jpg');
+      img.height = body.offsetHeight;
+      img.width = window.innerWidth;
+      let minImgWidth = img.height*1.43626570916;
+
+      if(window.innerWidth<minImgWidth)
+      {
+        img.width = minImgWidth+200;
+        let aRestar = img.width-window.innerWidth;
+        aRestar /=2;
+        img.position.x-=aRestar+50;
+      }
       app.stage.addChild(img);
       
 /*
@@ -27,40 +36,11 @@ Mantener la relación de aspecto de la imagen.
 Si la pantalla tiene un ancho más grande que el ancho de la imágen con la relación de aspecto correcta,
 hacer que el ancho de la imágen sea la de la pantalla, ampliando la anchura de la imagen solo cuando
 sea necesario.
+RELACION DE ASPECTO DE IMAGEN: 1.43626570916
+
+UPDATE: I DID ITTTTTTTTTTTTTTTTTTTTT
 */
 
-        window.onload = function(){
-            if(window.innerWidth<=992)
-            {
-                img.height =window.innerHeight;
-                img.width = img.height*1.43626570916; //relación de aspecto de la imagen
-            }else{
-                img.width = window.innerWidth;
-                img.height = window.innerHeight;
-            }
-            if(window.innerWidth <= 429)
-            {
-              img.position.x = - img.width/2.6;
-            }
-            if(window.innerWidth >= 430 && window.innerWidth <= 789)
-            {
-              img.position.x = - img.width/3.9;
-            }
-            if(window.innerWidth >= 992)
-            {
-              img.position.x = - 112;
-            }
-        }
-        window.onresize = function resi (){
-            if(window.innerWidth<=992)
-            {
-              img.height =window.innerHeight;
-              img.width = img.height*1.43626570916;
-            }else{
-                img.width = window.innerWidth;
-                img.height = window.innerHeight;
-            }
-        }
       let depthMap = new PIXI.Sprite.from('./assets/imgs/map.png');
       app.stage.addChild(depthMap);
       let displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);

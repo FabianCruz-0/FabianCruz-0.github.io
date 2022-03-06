@@ -1,4 +1,5 @@
 import { animate } from '@angular/animations';
+import { NumberSymbol } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 declare const THREE: any;
 
@@ -11,10 +12,10 @@ export class ThreeBackComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    let body = document.body, html = document.documentElement;
+    let body = document.body;
 
     let scene: any,
-      camera: { position: { z: number; }; rotation: { x: number; }; aspect: number; updateProjectionMatrix: () => void; },
+      camera: { position: { z: number; }; rotation: { x: number,y: NumberSymbol,z: number;}; aspect: number; updateProjectionMatrix: () => void; },
       renderer: {
         setSize: (arg0: number, arg1: number) => void;
         setClearColor: (arg0: number, arg1: number) => void;
@@ -26,8 +27,6 @@ export class ThreeBackComponent implements OnInit {
       star,
       stars: { rotation: { x: number, y:number, z:number }, position: { x: number, y:number, z:number } };
 
-      let canvas: HTMLElement;
-
     function init() {
       scene = new THREE.Scene();
 
@@ -38,7 +37,7 @@ export class ThreeBackComponent implements OnInit {
         1000
       );
       camera.position.z = 1;
-      camera.rotation.x = Math.PI / 2;
+      camera.rotation.x = Math.PI /2;
 
       renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setClearColor( 0x000000, 0.5 );
@@ -46,7 +45,7 @@ export class ThreeBackComponent implements OnInit {
       document.body.appendChild(renderer.domElement);
 
       starGeo = new THREE.Geometry();
-      for (let i = 0; i < 6000; i++) {
+      for (let i = 0; i < 5000; i++) {
         star = new THREE.Vector3(
           Math.random() * 600 - 300,
           Math.random() * 600 - 300,
@@ -91,6 +90,8 @@ export class ThreeBackComponent implements OnInit {
       );
       starGeo.verticesNeedUpdate = true;
 
+        camera.rotation.z+=0.0001;
+
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
@@ -110,5 +111,4 @@ export class ThreeBackComponent implements OnInit {
       stars.rotation.z=+(distanceX)*rotationSpeed;
     })
   }
-  
 }
