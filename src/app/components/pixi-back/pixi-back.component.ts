@@ -30,13 +30,14 @@ export class PixiBackComponent implements OnInit {
       }
       app.stage.addChild(img);
       
+      document.getElementById("winWidth")!.innerHTML=minImgWidth+"";
 
       let depthMap = new PIXI.Sprite.from('./assets/imgs/map.png');
       app.stage.addChild(depthMap);
       let displacementFilter = new PIXI.filters.DisplacementFilter(depthMap);
       app.stage.filters = [displacementFilter];
       window.onmousemove = function (e) {
-        if(window.innerWidth>minImgWidth)
+        if(window.innerWidth>minImgWidth-200)
         {
           displacementFilter.scale.x = (window.innerWidth / 2 + e.clientX)*0.05;
           displacementFilter.scale.y = (window.innerHeight / 2 + e.clientY) *0.05;

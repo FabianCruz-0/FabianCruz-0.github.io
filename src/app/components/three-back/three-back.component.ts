@@ -103,12 +103,16 @@ export class ThreeBackComponent implements OnInit {
     const rotationSpeed=0.00008
     addEventListener('mousemove', (e) => 
     {
-      mouseX=e.clientX;
-      mouseY=e.clientY;
-      distanceX = (window.innerWidth/2)-mouseX
-      distanceY = (window.innerHeight/2)-mouseY
-      stars.rotation.x=+(distanceY)*rotationSpeed;
-      stars.rotation.z=+(distanceX)*rotationSpeed;
+      let minImgWidth = parseInt(document.getElementById("winWidth")!.innerHTML);
+      if(window.innerWidth>minImgWidth-200)
+      {
+        mouseX=e.clientX;
+        mouseY=e.clientY;
+        distanceX = (window.innerWidth/2)-mouseX
+        distanceY = (window.innerHeight/2)-mouseY
+        stars.rotation.x=+(distanceY)*rotationSpeed;
+        stars.rotation.z=+(distanceX)*rotationSpeed;
+      }
     })
   }
 }
