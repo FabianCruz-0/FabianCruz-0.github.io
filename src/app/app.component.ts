@@ -7,9 +7,11 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit{
-  
+export class AppComponent implements OnInit {
+
   ngOnInit(): void {
+
+    document.getElementById('cont')!.style.height=document.body.offsetHeight+"px";
 
     let currentX = 0
     let currentY = 0
@@ -18,34 +20,29 @@ export class AppComponent implements OnInit{
     let speed = 0.1
     let cursor = document.getElementById('cursor')!;
 
-    function animate(){
-      currentX += (aimX-currentX) * speed
-      currentY += (aimY-currentY) * speed
+    function animate() {
+      currentX += (aimX - currentX) * speed
+      currentY += (aimY - currentY) * speed
 
-      cursor.style.top = currentX+'px'
-      cursor.style.left = currentY+'px'
+      cursor.style.top = currentX + 'px'
+      cursor.style.left = currentY + 'px'
       requestAnimationFrame(animate)
     }
-    
+
     animate()
 
-    document.addEventListener('mousemove', (e)=>{
+    document.addEventListener('mousemove', (e) => {
       aimX = e.pageY
       aimY = e.pageX
     })
 
   }
 
-  public constructor(private titleService: Title)
-  {
-     this.setTitle('Fabián Cruz - Software Engineer.')
-   }
-
-   
+  public constructor(private titleService: Title) {
+    this.setTitle('Fabián Cruz - Software Engineer.')
+  }
 
   public setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
-
-
 }
