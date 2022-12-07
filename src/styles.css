@@ -13,7 +13,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   animation: 7s fade-in-body;
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 #winWidth
 {
@@ -176,6 +176,7 @@ canvas {
     transform: scale(1);
   }
 }
+
 
 /* medias responsivos */
 @media (max-width: 520px) {
