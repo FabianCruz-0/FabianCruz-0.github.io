@@ -73,7 +73,8 @@ canvas {
 }
 
 .header-link {
-  animation: fade-in 3.7s ease-in forwards, scale-in 2.5s;
+  animation: fade-in 4.5s ease-in forwards, scale-in 2.5s 1.5s;
+  animation-delay: scale-in 4s;
   text-decoration: underline;
 }
 
@@ -109,6 +110,9 @@ canvas {
 
 @keyframes fade-in {
   0% {
+    opacity: 0;
+  }
+  30%{
     opacity: 0;
   }
   100% {
