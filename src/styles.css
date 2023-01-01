@@ -12,7 +12,7 @@ body {
   font-size: 1.2vw;
   width: 100vw;
   min-height: 100vh;
-  animation: 7s fade-in-body;
+  animation: 7s fade-in-body forwards;
   overflow-x:hidden;
 }
 #winWidth
@@ -24,7 +24,6 @@ body {
   left: 0;
   top: 0;
   position: absolute;
-  background: radial-gradient(circle,rgba(255, 255, 255, 0) 0%,rgba(0, 0, 0, 0.9) 100%);
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -78,22 +77,6 @@ canvas {
   text-decoration: underline;
 }
 
-.link-proj {
-  position: absolute;
-  top: 4.2vh;
-  left: 3vw;
-  animation-delay: 2.2s;
-  opacity: 0;
-}
-
-.link-cont {
-  position: absolute;
-  top: 4.2vh;
-  right: 3vw;
-  animation-delay: 2.2s;
-  opacity: 0;
-}
-
 #cursor {
   position: absolute;
   width: 2vw;
@@ -109,7 +92,7 @@ canvas {
 
 .contenido {
   animation: fade-in-content 7s forwards;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 
 @keyframes fade-in-content {
@@ -148,11 +131,7 @@ canvas {
     );
   }
   100% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    );
+    background: radial-gradient(circle,rgba(255, 255, 255, 0) 0%,rgba(0, 0, 0, 0.9) 100%);
   }
 }
 

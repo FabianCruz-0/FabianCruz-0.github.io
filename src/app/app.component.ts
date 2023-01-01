@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     document.getElementById('cont')!.style.height=document.body.offsetHeight+"px";
-    document.body.style.width=window.innerWidth+"px";
+    document.body.style.width=document.documentElement.clientWidth+"px";
 
     let currentX = -30
     let currentY = -30
