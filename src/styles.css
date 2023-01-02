@@ -73,8 +73,6 @@ canvas {
 }
 
 .header-link {
-  animation: fade-in 4.5s ease-in forwards, scale-in 2.5s 1.5s;
-  animation-delay: scale-in 4s;
   text-decoration: underline;
 }
 
@@ -162,6 +160,13 @@ canvas {
 
 
 /* medias responsivos */
+@media (min-width: 990px) {
+  .header-link {
+    animation: fade-in 4.5s ease-in forwards, scale-in 2.5s 1.5s forwards;
+    animation-delay: scale-in 4s;
+  }
+}
+
 @media (max-width: 520px) {
   html,
   body {
