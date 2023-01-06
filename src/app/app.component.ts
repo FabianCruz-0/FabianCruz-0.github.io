@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     let currentY = -30
     let aimX = -30
     let aimY = -30
-    let speed = 0.1
+    let speed = 0.2
     let cursor = document.getElementById('cursor')!;
 
     function animate() {
